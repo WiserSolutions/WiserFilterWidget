@@ -18,6 +18,8 @@ Tested to work with Sisense **6.7.1.14501**.
 ## Dependencies
 
 * `Drop.js`
+  * For convenience this is included in the repository and in the widget zip
+    download. It may be removed to a standalone plugin in a future release.
 
 ## Usage
 
