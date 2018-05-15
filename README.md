@@ -15,12 +15,6 @@ Tested to work with Sisense **6.7.1.14501**.
 * Unzip and copy the `WiserFilterWidget` folder to the `PrismWeb\plugins` folder
   of your Sisense installation.
 
-## Dependencies
-
-* `Drop.js`
-  * For convenience this is included in the repository and in the widget zip
-    download. It may be removed to a standalone plugin in a future release.
-
 ## Usage
 
 * Add widget to a Sisense dashboard

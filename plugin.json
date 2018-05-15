@@ -1,17 +1,12 @@
 {
   "name": "WiserFilterWidget",
   "source": [
-    "dependencies/tether-1.3.3.js",
-    "dependencies/drop-1.4.2.js",
-
-    "widget.js"
+    "widget.6.js",
+    "wiser-filter-widget/directive.6.js",
+    "style-editor/controller.6.js"
   ],
   "style": [
-    "dependencies/drop-1.4.2-theme-basic.css",
-    "dependencies/wiser.drop-theme.arrows-dark.css",
-    "dependencies/wiser.drop.css",
-
-    "widget.css"
+    "wiser-filter-widget/style.css"
   ],
   "pluginInfraVersion": 2,
   "version": "0.1.0"

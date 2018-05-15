@@ -1,0 +1,62 @@
+<div class="wiser-filter-widget" data-ng-class='{"wiser-filter-widget--active": !!originalSelection.length}'>
+
+  <div class="wiser-filter-widget__trigger" data-ng-click="toggleDropdown()">
+    <div class="wiser-filter-widget__trigger-text" data-ng-attr-title="{{title()}}">{{title()}}</div>
+    <div class="wiser-filter-widget__trigger-icon"></div>
+  </div>
+
+  <div class="wiser-filter-widget__dropdown" ng-show="dropdownOpen">
+    <table style="width: 100%">
+      <tr style="background: #f1f1f1">
+        <th style="width: 39px; text-align: center;" data-ng-if="widget.style.multipleSelect">
+          <div class="uc-checker uc-checker-container">
+            <div data-ng-class="allSelected ? 'uc-chk-icon-check' : (someSelected ? 'uc-chk-icon-box' : 'uc-chk-icon-empty')"
+                 data-ng-click="toggleSelectAll()"
+                 class="uc-chk-icon-white"></div>
+          </div>
+        </th>
+        <th style="padding: 5px;" ng-attr-colspan="widget.style.multipleSelect ? 1 : 2">
+          <input type="text"
+                 placeholder="Start typing to filter..."
+                 style="width: 100%; height: 27px; font-size: 12px; padding: 0 8px; outline: none"
+                 data-ng-model="filterText">
+        </th>
+      </tr>
+    </table>
+    <scroll style="height: 150px"
+            data-listener="{direction: 'down', percent: 75, callback: growScrollWindow}">
+      <table class="uc-ms-list"
+             style="width: 100%; background-color: white; height: initial"
+             data-ng-class='{"uc-singleSelect": !widget.style.multipleSelect}'>
+        <tr class="uc-checker"
+            style="border-bottom: 1px solid #e6e6e6; height: 30px"
+            data-ng-repeat="item in items | filter:filterText | limitTo:windowSize"
+            data-ng-click="select(item)">
+          <td style="width: 39px; text-align: center;">
+            <div class="uc-checker-container">
+              <div class="uc-chk-icon-white" data-ng-class="isSelected(item.data) ? 'uc-chk-icon-check' : 'uc-chk-icon-empty'"></div>
+            </div>
+          </td>
+          <td style="padding: 5px;">
+            {{item.text}}
+          </td>
+        </tr>
+      </table>
+    </scroll>
+    <div class="wiser-filter-widget__buttons">
+      <button class="wiser-filter-widget__button" data-ng-click="cancelChanges()">
+        Cancel
+      </button>
+      <button class="wiser-filter-widget__button wiser-filter-widget__apply" data-ng-click="updateFilters()">
+        Apply
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<div class="popup-overlay"
+     style="position: fixed; top: 0; bottom: 0; left: 0; right: 0; z-index: -1"
+     data-ng-show="dropdownOpen"
+     data-ng-click="updateFilters()">
+</div>
