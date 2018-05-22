@@ -7,6 +7,10 @@ or more values.
 
 ![WiserClearAllFiltersPlugin Screenshot 2](/images/screenshot-2.png)
 
+![WiserClearAllFiltersPlugin Screenshot 3](/images/screenshot-3.png)
+
+![WiserClearAllFiltersPlugin Screenshot 4](/images/screenshot-4.png)
+
 Tested to work with Sisense **6.7.1.14501**.
 
 ## Installation
@@ -19,6 +23,7 @@ Tested to work with Sisense **6.7.1.14501**.
 
 * Add widget to a Sisense dashboard
 * Add a dimension for the widget to filter by
+* Select "Multiple" or "Single" Selection
 * Interact with the widget to affect dashboard filters
 
 ## Support
