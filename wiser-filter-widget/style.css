@@ -10,8 +10,16 @@
   background-position-x: 3px;
 }
 
+wiser-filter-widget {
+  display: -ms-flexbox !important;
+  display: flex !important;
+
+  -ms-flex-align: center !important;
+     align-items: center !important;
+}
+
 .wiser-filter-widget {
-  max-width: 250px;
+  width: 250px;
   margin: 10px auto 0;
   overflow: visible;
   z-index: 5;
