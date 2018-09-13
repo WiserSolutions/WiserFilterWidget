@@ -11,26 +11,10 @@ mod.directive('wiserFilterWidget', ['$animate', function($animate) {
     link($scope, $element, _attrs) {
       let { widget } = $scope;
 
-      $scope.title = function () {
-        let dimensionPanel = widget.metadata.panel(PANEL_FILTER_DIMENSION);
-        let filterDimension = dimensionPanel.items[0];
-
-        if ($scope.appstate === 'widget') {
-          return filterDimension ? filterDimension.jaql.title : 'Filter';
-        }
-
-        let selectedCount = ($scope.originalSelection || []).length;
-
-        if (selectedCount) {
-          return $scope.originalSelection.join(', ');
-        } else {
-          return filterDimension.jaql.title;
-        }
-      };
-
       $scope.dropdownOpen = false;
 
       $scope.filterText = '';
+      $scope.title = 'Filter';
 
       $scope.toggleDropdown = function() {
         if ($scope.dropdownOpen) {
@@ -64,7 +48,7 @@ mod.directive('wiserFilterWidget', ['$animate', function($animate) {
       prism.activeDashboard.on('filterschanged', updateSelection);
 
       function updateSelection() {
-        if ($scope.appstate !== 'dashboard') { return; }
+        if ($scope.appstate === 'widget') { return; }
 
         let dimensionPanel = widget.metadata.panel(PANEL_FILTER_DIMENSION);
         let filterDimension = dimensionPanel.items[0];
@@ -82,6 +66,25 @@ mod.directive('wiserFilterWidget', ['$animate', function($animate) {
 
         updateApply();
         updateSelectAll();
+        updateTitle();
+      }
+
+      function updateTitle() {
+        let dimensionPanel = widget.metadata.panel(PANEL_FILTER_DIMENSION);
+        let filterDimension = dimensionPanel.items[0];
+
+        if ($scope.appstate === 'widget') {
+          $scope.title = filterDimension ? filterDimension.jaql.title : 'Filter';
+          return;
+        }
+
+        let selectedCount = ($scope.originalSelection || []).length;
+
+        if (selectedCount) {
+          $scope.title = $scope.originalSelection.join(', ');
+        } else {
+          $scope.title = filterDimension.jaql.title;
+        }
       }
 
       widget.on('ready', updateItems);
