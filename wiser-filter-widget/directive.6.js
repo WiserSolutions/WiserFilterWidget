@@ -6,7 +6,7 @@ mod.directive('wiserFilterWidget', ['$animate', function($animate) {
     restrict: 'E',
     replace: false,
     transclude: false,
-    templateUrl: '/plugins/WiserFilterWidget/wiser-filter-widget/template.html',
+    templateUrl: '/plugins/WiserFilterWidget/wiser-filter-widget/template.4aaedaae3b0162ca200eab8435252a70.html',
 
     link($scope, $element, _attrs) {
       let { widget } = $scope;
