@@ -1,0 +1,158 @@
+.plugins-grid span[title=WiserFilterWidget]::before {
+  content: '';
+  display: inline-block;
+  background-image: url('/plugins/WiserFilterWidget/images/wiser-logo-white.svg');
+  background-size: 20px 20px;
+  vertical-align: middle;
+  width: 25px;
+  height: 25px;
+  margin-left: -25px;
+  background-position-x: 3px;
+}
+
+wiser-filter-widget {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center !important;
+  -webkit-align-items: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
+  -webkit-box-pack: center !important;
+  -webkit-justify-content: center !important;
+  -ms-flex-pack: center !important;
+  justify-content: center !important;
+}
+
+.wiser-filter-widget {
+  overflow: visible;
+
+  z-index: 5;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  &__trigger {
+    min-width: 270px;
+
+    padding: 11px;
+
+    background-color: white;
+    color: #333333;
+
+    border: 1px solid #d4d4d4;
+    border-radius: 4px;
+
+    outline: none;
+
+    width: 270px;
+
+    // Sisense has some really weird default button font styles we want to undo
+    font: inherit;
+
+    transition: color            0.2s,
+                background-color 0.2s,
+                border-color     0.2s ease;
+
+    &:hover:not(&--active):not(:active) {
+      color: #0071bc;
+      border-color: #0071bc;
+    }
+
+    &:active:not(&--active) {
+      color: #015596;
+      border-color: #015596;
+    }
+
+    &--active {
+      background-color: #0277bd;
+      border-color: #0277bd;
+      color: white;
+    }
+  }
+
+  &__trigger-text {
+    display: inline-block;
+
+    max-width: ~"calc(100% - 18px)";
+    vertical-align: middle;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+    word-wrap: normal;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+  }
+
+  &__trigger-icon {
+    float: right;
+
+    margin-top: 4px;
+  }
+
+  &__dropdown {
+    position: absolute;
+
+    border: 1px solid #d4d4d4;
+
+    width: 270px;
+  }
+
+  &__buttons {
+    display: -ms-flexbox;
+    display: flex;
+
+    background: #f1f1f1;
+  }
+
+  &__button {
+    -ms-flex: 1;
+        flex: 1;
+
+    padding: 10px;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    transition: background 0.2s, color 0.2s;
+
+    &:not([disabled]) {
+      cursor: pointer;
+    }
+
+    &:not([disabled]):hover {
+      background: #e8e8e8;
+    }
+
+    &__button[disabled] {
+      color: #d0d0d0;
+    }
+  }
+
+  &__apply {
+    &:not([disabled]) {
+      background: #0277bd;
+      color: white;
+    }
+    &:not([disabled]):hover {
+      background-color: #038ee2;
+    }
+  }
+}
+
+
+.uc-checker-container {
+  height: 27px;
+  width: 27px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 27px;
+  text-align: center;
+}

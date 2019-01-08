@@ -1,8 +1,8 @@
-<div class="wiser-filter-widget" data-ng-class='{"wiser-filter-widget--active": !!originalSelection.length}'>
+<div class="wiser-filter-widget">
 
-  <div class="wiser-filter-widget__trigger" data-ng-click="toggleDropdown()">
+  <div class="wiser-filter-widget__trigger" data-ng-class='{"wiser-filter-widget__trigger--active": !!originalSelection.length}' data-ng-click="toggleDropdown()">
     <div class="wiser-filter-widget__trigger-text" data-ng-attr-title="{{title}}">{{title}}</div>
-    <div class="wiser-filter-widget__trigger-icon"></div>
+    <i class="fa fa-chevron-down fa-fw wiser-filter-widget__trigger-icon"></i>
   </div>
 
   <div class="wiser-filter-widget__dropdown" ng-show="dropdownOpen" style="background-color: white;">
@@ -56,7 +56,7 @@
 </div>
 
 <div class="popup-overlay"
-     style="position: fixed; top: 0; bottom: 0; left: 0; right: 0; z-index: -1"
+     style="position: fixed; top: 0; bottom: 0; left: 0; right: 0; z-index: 0"
      data-ng-show="dropdownOpen"
      data-ng-click="updateFilters()">
 </div>
