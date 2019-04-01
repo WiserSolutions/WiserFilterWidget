@@ -77,7 +77,7 @@ wiser-filter-widget {
   &__trigger-text {
     display: inline-block;
 
-    max-width: ~"calc(100% - 18px)";
+    max-width: calc(100% - 18px);
     vertical-align: middle;
 
     font-weight: 600;

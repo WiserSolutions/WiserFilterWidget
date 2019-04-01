@@ -6,7 +6,7 @@
     "style-editor/controller.6.js"
   ],
   "style": [
-    "wiser-filter-widget/style.less"
+    "wiser-filter-widget/style.scss"
   ],
   "pluginInfraVersion": 2,
   "version": "0.2.1"
