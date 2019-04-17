@@ -11,7 +11,7 @@ or more values.
 
 ![WiserClearAllFiltersPlugin Screenshot 4](/images/screenshot-4.png)
 
-Tested to work with Sisense **7.1.2.11001**.
+Tested to work with Sisense **7.3.0.11022**.
 
 ## Installation
 
